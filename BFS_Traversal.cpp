@@ -5,6 +5,7 @@
 using namespace std;
 
 class Graph{
+public:
     int n;
     list <int> *adj;
 
@@ -41,4 +42,16 @@ class Graph{
 };
 
 
+int main(){
+    Graph g(5);
+    g.insert(0,4);
+    g.insert(0,2);
+    g.insert(2,4);
+    g.insert(1,3);
+    g.insert(3,0);
+
+    g.BFS_traversal(0);
+
+return 0;
+}
     
