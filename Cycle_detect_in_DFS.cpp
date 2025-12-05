@@ -3,6 +3,7 @@
 #include <list>
 using namespace std;
 
+
 class Graph {
 public:
     int n;
@@ -13,10 +14,12 @@ public:
         adj = new list<int>[n];
     }
 
+
     void insert(int u, int v) {
         adj[u].push_back(v);
         adj[v].push_back(u);
     }
+
 
     bool helper_cycle(int start, int parent, vector<bool>& vis) {
         vis[start] = true;
@@ -33,11 +36,14 @@ public:
         return false;
     }
 
+
     bool is_cycle(int start) {
         vector<bool> vis(n, false);
         return helper_cycle(start, -1, vis);
     }
 };
+
+
 
 int main(){
     Graph g(6);
